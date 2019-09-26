@@ -21,15 +21,15 @@
 ### Association
 - belongs_to :user
 - belongs_to :group
-- has_many :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|storing|null: false|
+|name|storing|null: false|
 ### Association
 - has_many :tweets 
 - has_many :groups,through: :groups_users
+- has_many :groups_users
 
 ## groups_users
 |Column|Type|Options|
