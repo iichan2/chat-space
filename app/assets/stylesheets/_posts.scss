@@ -1,6 +1,6 @@
 * {box-sizing: border-box;}
 .flashbox{
-  background-color: #38aef0;
+  background-color:$mainLightblueColor;
 }
 .wrapper{
   height:100vh;
@@ -26,7 +26,7 @@
         display: flex;
         .user-name{
           font-size:16px;
-          color:#ffffff;
+          color: $mainWhiteColor;
           font-weight: bold;
         }
         .menu{
@@ -35,7 +35,7 @@
             font-size: 14px
           }
           .fa-white{
-            color: #fff
+            color: $mainWhiteColor;
           }
         }
       }  
@@ -50,13 +50,13 @@
         padding:20px 0 40px;
           .group-name{
             font-size:15px;
-            color:#fff;
+            color: $mainWhiteColor;
             font-weight: bold;
             padding-bottom:5px;
          }
           .latest-message{
             font-size:12px;
-            color:#fff;
+            color: $mainWhiteColor;
             font-weight: bold;
           }
        }
@@ -79,7 +79,7 @@
         padding-top: 35px;
         .current-group {
           font-size:20px;
-          color:#333;
+          color: $mainBlockColoer;
           padding-bottom:15px;
         }
         .member-list{
@@ -93,7 +93,7 @@
         margin-top: 28px;
         padding: 0 20px;
         line-height: 40px;
-        border: solid #38aef0  1px;
+        border: solid $mainLightblueColor  1px;
       }
     }   
     .messages{
@@ -109,7 +109,7 @@
           .talker{
             font-size:16px;
             font-weight: bold;          
-            color:#333;
+            color: $mainBlockColoer;
             padding:0 10px 10px 0;
           }
           .date{
@@ -119,14 +119,14 @@
         }
         .text {
           font-size:14px;
-          color:#434a54;
+          color:$messageColoer;
         }
       }
     }
     .form{
       width: calc(100% - 300px);
       height: 100px;
-      background-color: gray;
+      background-color: $messageColoer;
       padding:20px 40px;
       position: fixed;
       bottom:0;
@@ -141,14 +141,14 @@
         .input-box{
           height: 50px;
           padding:0 10px 0 10px;
-          background-color: #fff;
+          background-color: $mainWhiteColor;
           -webkit-flex-grow: 1;
           flex-grow: 1;
           &__text{
             width: calc(100% - 30px);
             height: 50px;
             font-size:16px;
-            color:#434a54;
+            color: $messageColoer;
             border: none; 
           }
           &__image{
@@ -161,8 +161,8 @@
           margin-left: auto;
           height: 50px;
           width: 100px;
-          background-color: #38aef0;
-          color: #fff;
+          background-color: $mainLightblueColor;
+          color: $mainWhiteColor;
           margin-left: 15px;
           line-height: 50px;
         }
