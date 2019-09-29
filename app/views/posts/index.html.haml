@@ -28,11 +28,11 @@
           %p.date 2019/09/27(Fri) 09:47:35
         %p.text メッセージ
     .form
-      %form#new_message.new_message{"accept-charset" => "UTF-8",  :method => "post"}
-        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-        %input{:name => "authenticity_token", :type => "hidden", :value => ""}/
+      %form#new_message.new_message{"accept-charset": "UTF-8",  ':method': "post"}
+        %input{':name':  "utf8", ':type': "hidden", ':value': "✓"}/
+        %input{':name': "authenticity_token", ':type': "hidden", ':value': ""}/
         .input-box
-          %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-          %label.input-box__image{:for => "message_image"}
+          %input#message_content.input-box__text{':name': "message[content]", ':placeholder': "type a message", ':type': "text"}/
+          %label.input-box__image{':for': "message_image"}
             %i.fa.fa-image.fa-large
-        %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+        %input.submit-btn{':name': "commit", ':type': "submit", ':value': "Send"}/
