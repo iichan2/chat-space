@@ -1,0 +1,38 @@
+.flashbox
+.wrapper
+  .chat-left
+    .left-header
+      .left-header__box
+        %p.user-name ユーザー名
+        %ul.menu
+          =link_to "/group/new", class: "new-group__btn" do
+            %i.fa.fa-edit.fa-white.fa-large
+          =link_to "/user/edit", class: "edit-user__btn" do
+            %i.fa.fa-cog.fa-white.fa-large
+    .groups
+      .group
+        %p.group-name グループ名
+        %p.latest-message 最後のメッセージ
+  .chat-main
+    .main-header
+      .group-status
+        %p.current-group グループ名
+        %ul.member-list Member：
+      %ul.edit
+        =link_to "/group/edit", class: "edit-group__btn" do
+          %a Edit
+    .messages
+      .message
+        .message-status
+          %p.talker ユーザー名
+          %p.date 2019/09/27(Fri) 09:47:35
+        %p.text メッセージ
+    .form
+      %form#new_message.new_message{"accept-charset": "UTF-8",  method: "post"}
+        %input{name: "utf8", type: "hidden", value: "✓"}/
+        %input{name: "authenticity_token", type: "hidden", value: ""}/
+        .input-box
+          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+          %label.input-box__image{for: "message_image"}
+            %i.fa.fa-image.fa-large
+        %input.submit-btn{name: "commit", type: "submit", value: "Send"}/
