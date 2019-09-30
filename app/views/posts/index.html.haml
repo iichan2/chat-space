@@ -5,7 +5,7 @@
       .left-header__box
         %p.user-name ユーザー名
         %ul.menu
-          =link_to "/group/new", class: "new-group__btn" do
+          =link_to "/groups/new", class: "new-group__btn" do
             %i.fa.fa-edit.fa-white.fa-large
           =link_to "/user/edit", class: "edit-user__btn" do
             %i.fa.fa-cog.fa-white.fa-large
@@ -19,7 +19,7 @@
         %p.current-group グループ名
         %ul.member-list Member：
       %ul.edit
-        =link_to "/group/edit", class: "edit-group__btn" do
+        =link_to "/groups/edit", class: "edit-group__btn" do
           %a Edit
     .messages
       .message
