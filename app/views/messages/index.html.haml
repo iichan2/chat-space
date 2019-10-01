@@ -2,12 +2,12 @@
 
   = render 'shared/side_bar'
 
-  .chat
-    .header
-      .left-header
-        .left-header__title
+  .chat-main
+    .main-header
+      .group-status
+        .current-group
           グループ名
-        %ul.left-header__members
+        %ul.member-list
           Member：
           %li.member
             メンバー名
@@ -15,8 +15,8 @@
             メンバー名
           %li.member
             メンバー名
-      .right-header
-        .right-header__button
+      .edit
+        .edit-group__btn
           Edit
     .messages
           = render @messages
@@ -24,9 +24,8 @@
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :sontent, class: 'form__message', placeholder: 'type a message'
-        .form__mask
+        .input-box
           =f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
             =  f.file_field :image, class: 'hidden'
-        =f.submit 'Send',class: 'form_submit'
-
+        =f.submit 'Send',class: 'submit-btn'
