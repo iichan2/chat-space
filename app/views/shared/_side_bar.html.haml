@@ -3,18 +3,16 @@
     %h3.left-header__box
       = current_user.name
       %ul.menu
-      %li.list
         = link_to new_group_path class: 'icon' do
           %i.far.fa-edit.fa-white.fa-large
-      %li.list
         = link_to edit_user_path(current_user) do
           %i.fa.fa-cog.fa-white.fa-large
   .groups
     - current_user.groups.each do |group|
       .group
         = link_to group_messages_path(group) do
-          .group__name
+          .group-name
             = group.name
-          .group__message
+          .latest-message
             = group.show_last_message
              
