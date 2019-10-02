@@ -1,5 +1,10 @@
-@import "variable.scss";
-@import "./reset";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import "variable.scss";
+@import "./reset";
+@import "mixin/side_bar.scss";
+@import "config/colors";
+@import "modules/flash";
+@import "modules/group";
 @import "posts";
+

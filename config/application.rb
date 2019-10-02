@@ -13,6 +13,8 @@ module ChatSpace
       g.javascripts false
       g.helper false
       g.test_framework false
-    end
+      end
+    config.i18n.default_locale = :ja
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
   end
 end
