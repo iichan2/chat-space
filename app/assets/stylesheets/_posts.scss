@@ -85,10 +85,7 @@
         .member-list{
           font-size:12px;
           color:#999;
-          display: flex;
         }
-
-
       }
       .edit{
         color: #38aef0;
@@ -97,7 +94,6 @@
         padding: 0 20px;
         line-height: 40px;
         border: solid $mainLightblueColor  1px;
-        cursor: pointer;
       }
     }   
     .messages{
@@ -148,20 +144,14 @@
           background-color: $mainWhiteColor;
           -webkit-flex-grow: 1;
           flex-grow: 1;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-justify-content: flex-start;
-          justify-content: flex-start;
           &__text{
+            width: calc(100% - 30px);
             height: 50px;
             font-size:16px;
             color: $messageColoer;
             border: none; 
-            -webkit-flex-grow: 1;
-            flex-grow: 1;
           }
           &__image{
-            line-height: 50px;
             .fa-large{
               font-size: 21px;
             }
@@ -175,7 +165,6 @@
           color: $mainWhiteColor;
           margin-left: 15px;
           line-height: 50px;
-          cursor: pointer;
         }
       }
     }
