@@ -1,4 +1,28 @@
 $(function(){
+
+
+  function buildPost(message){
+    var html = `<div class="message">
+                 <div class="message-status">
+                   <div class="talker">
+                     ${ message.name }
+                   </div>
+                   <div class="date">
+                     ${ message.created_at }
+                   </div>
+                 </div>
+                   <div class="text">
+                    <p class="content">
+                      ${ message.content }
+                    </p>   
+                   </div>
+                </div>`
+    return  html;
+  }
+
+
+
+
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -12,12 +36,14 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data);
-
+      var html = buildPost(data);
+      $('messages').append(html);
+      $('#message_content').val('');
+      $('.form__submit').prop('disabled', false);
     })
     .fail(function(){
-
-
+      alert('エラー');
+      $('.form__submit').prop('disabled', false);
     })
   })
 });
