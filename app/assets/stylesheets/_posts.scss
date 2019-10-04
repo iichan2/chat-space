@@ -97,6 +97,10 @@
         line-height: 40px;
         border: solid $mainLightblueColor  1px;
         cursor: pointer;
+        text-decoration: none;
+        .EDITlink{
+          text-decoration: none;
+        }
       }
     }   
     .messages{
