@@ -160,10 +160,19 @@
             flex-grow: 1;
           }
           &__image{
-            line-height: 50px;
-            .fa-large{
-              font-size: 21px;
+            width: 22px;
+            height: 22px;
+            margin-top: 15px;
+            &__icon{
+              .fa-large{
+                font-size: 20px;
+                cursor: pointer;
+              }
             }
+            &__file{
+              display: none;
+            }
+
           }
         }
         .submit-btn{

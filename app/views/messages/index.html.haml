@@ -13,8 +13,9 @@
             %li.member
               =user.name
       .edit
-        .edit-group__btn
-          Edit
+        = link_to edit_group_path(@group.id) do
+          .edit-group__btn
+            Edit
     .messages
       = render @messages
  
@@ -23,7 +24,9 @@
         .input-box
           = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
           .input-box__image
-            =f.label :image, class: 'form__mask__image' do
-              %i.far.fa-image
+            =f.label :image,class: "input-box__image__icon" do
+              %i.far.fa-image.fa-large
+              =f.file_field :image, class: 'input-box__image__file' ,type: 'file' ,name: 'massage[image]' do
+                %i.far.fa-image
         =f.submit 'Send',class: 'submit-btn'
 
