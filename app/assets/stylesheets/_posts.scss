@@ -2,7 +2,7 @@
 .flashbox{
 }
 .wrapper{
-  height:100vh;
+  height:100%;
   width: 100%;
   &:after {
     content: '';
@@ -10,7 +10,7 @@
     clear: both;
   }
   .chat-left{
-    height:100vh;
+    height:100%;
     width:300px;   
     float: left;
     .left-header{

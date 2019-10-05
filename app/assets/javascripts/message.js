@@ -1,7 +1,5 @@
 $(function(){
-
-
-  function buildPost(message){
+  function buildHTML(message){
     var html = `<div class="message">
                  <div class="message-status">
                    <div class="talker">
@@ -19,10 +17,6 @@ $(function(){
                 </div>`
     return  html;
   }
-
-
-
-
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -36,7 +30,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      var html = buildPost(data);
+      var html = buildHTML(data);
       $('messages').append(html);
       $('#message_content').val('');
       $('.form__submit').prop('disabled', false);
