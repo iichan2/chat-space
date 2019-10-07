@@ -109,11 +109,11 @@
       min-height: calc(100vh - 100px);
       width: 100%;
       margin-top: 100px;
-      padding: 0 40px 100px;
+      padding: 46px 40px 100px;
       background-color: #fafafa;
       overflow: scroll;
       .message{
-        padding: 46px 0 40px;
+        padding: 0 0 40px;
         .message-status{
           display: flex;
           .talker{

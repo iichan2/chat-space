@@ -1,26 +1,29 @@
 $(function(){
   function buildHTML(message){
-    var html = `<div class="message">
+  
+  let image =  message.image.url? `<div class="image"><img src=${message.image.url}></div> `:" ";
+    let html = `<div class="message">
                  <div class="message-status">
                    <div class="talker">
-                     ${ message.name }
+                     ${ message.user_name }
                    </div>
                    <div class="date">
-                     ${ message.created_at }
+                     ${ message.time }
                    </div>
                  </div>
                    <div class="text">
                     <p class="content">
                       ${ message.content }
-                    </p>   
+                    </p>
+                      ${image}
                    </div>
                 </div>`
     return  html;
   }
   $('#new_message').on('submit',function(e){
     e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
+    let formData = new FormData(this);
+    let url = $(this).attr('action');
     $.ajax({
       url: url,
       type: "POST",
@@ -30,11 +33,13 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      var html = buildHTML(data);
-      $('messages').append(html);
-      $('#message_content').val('');
-      $('.form__submit').prop('disabled', false);
+      let html = buildHTML(data);
+      $('.messages').append(html);
+      $('#new_message')[0].reset();
+      $('.submit-btn').prop('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+
+ 
     })
     .fail(function(){
       alert('エラー');
@@ -42,3 +47,4 @@ $(function(){
     })
   })
 });
+
