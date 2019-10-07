@@ -8,7 +8,7 @@ $(function(){
                      ${ message.user_name }
                    </div>
                    <div class="date">
-                     ${ message.time }
+                     ${ message.time.strftime("%Y/%m/%d %H:%M")}
                    </div>
                  </div>
                    <div class="text">
