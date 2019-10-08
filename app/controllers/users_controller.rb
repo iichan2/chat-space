@@ -19,7 +19,6 @@ def index
 end  
 
 
-
   private
 
   def user_params
