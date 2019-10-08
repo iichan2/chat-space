@@ -1,9 +1,8 @@
 * {box-sizing: border-box;}
 .flashbox{
-  background-color:$mainLightblueColor;
 }
 .wrapper{
-  height:100vh;
+  height:100%;
   width: 100%;
   &:after {
     content: '';
@@ -11,9 +10,10 @@
     clear: both;
   }
   .chat-left{
-    height:100vh;
+    height:100%;
     width:300px;   
     float: left;
+    position: fixed;
     .left-header{
       background-color:#253141;
       width: 300px;
@@ -45,7 +45,8 @@
      width: 300px;
      min-height: calc(100vh - 100px);
      margin-top: 100px;
-     padding: 20px 20px 0;
+     padding: 20px 20px 100px;
+     overflow: auto;
       .group{
         padding-bottom:20px;
           .group-name{
@@ -98,16 +99,21 @@
         line-height: 40px;
         border: solid $mainLightblueColor  1px;
         cursor: pointer;
+        text-decoration: none;
+        .EDITlink{
+          text-decoration: none;
+        }
       }
     }   
     .messages{
       min-height: calc(100vh - 100px);
       width: 100%;
       margin-top: 100px;
-      padding: 0 40px;
+      padding: 46px 40px 100px;
       background-color: #fafafa;
+      overflow: scroll;
       .message{
-        padding: 46px 0 40px;
+        padding: 0 0 40px;
         .message-status{
           display: flex;
           .talker{
@@ -161,10 +167,19 @@
             flex-grow: 1;
           }
           &__image{
-            line-height: 50px;
-            .fa-large{
-              font-size: 21px;
+            width: 22px;
+            height: 22px;
+            margin-top: 15px;
+            &__icon{
+              .fa-large{
+                font-size: 20px;
+                cursor: pointer;
+              }
             }
+            &__file{
+              display: none;
+            }
+
           }
         }
         .submit-btn{
