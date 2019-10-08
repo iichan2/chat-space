@@ -45,7 +45,9 @@
      width: 300px;
      min-height: calc(100vh - 100px);
      margin-top: 100px;
-     padding: 20px 20px 100px;
+
+     padding: 20px 20px 0;
+     position: fixed;
      overflow: auto;
       .group{
         padding-bottom:20px;
@@ -112,6 +114,7 @@
       padding: 46px 40px 100px;
       background-color: #fafafa;
       overflow: scroll;
+
       .message{
         padding: 0 0 40px;
         .message-status{
