@@ -54,8 +54,8 @@ function addUser(id, name) {
 }
   $('#user-search-result').on('click',".chat-group-user__btn--add",function(){
   $(this).parent().remove()
-  var name = $(this).attr('data-user-name');
-  var id = $(this).attr('data-user-id');
+  var name = $(this).data('user-name');
+  var id = $(this).data('user-id');
     addUser(id, name);  
   });
 // 追加リストから削除する
