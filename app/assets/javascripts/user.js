@@ -1,5 +1,5 @@
-$(function(){
-
+$(document).on('turbolinks:load', function(){
+// ユーザーリストをだす
   var search_list = $("#user-search-result");
 
   function appendUser(user) {
@@ -8,16 +8,13 @@ $(function(){
                     <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${ user.name }">追加</div>
                   </div>`
     search_list.append(html);
-   }
-                 
+  }                
    function appendErrMsgToHTML(msg) {
       var html = `<li>
                     <div class='listview__element--right-icon'>${ msg }</div>
                  </li>`
     search_list.append(html);
-    }
-
-
+  }
   $('#user-search-field').on('keyup',function(e){
    e.preventDefault();
    var input = $('#user-search-field').val();
@@ -29,8 +26,7 @@ $(function(){
     dataType: 'json'
    })
    .done(function(users) {
-     console.log(users)
-     $(".chat-group-user").empty();
+     $("#user-search-result").empty();
      if (users.length !== 0) {
       users.forEach(function(user){
         appendUser(user);
@@ -41,7 +37,29 @@ $(function(){
      }
    })
    .fail(function() {
-    alert('映画検索に失敗しました');
+    alert('ユーザー検索に失敗しました');
   })
+  });
+// リストからユーザーを追加する
+var add_list = $(".chat-group-users");
+
+function addUser(id, name) {
+
+  var html = `<div class='chat-group-user'>
+               <input name='group[user_ids][]' type='hidden' value='${ id }'>
+               <p class='chat-group-user__name'>${ name }</p>
+               <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
+              </div>`
+   add_list.append(html);
+}
+  $('#user-search-result').on('click',".chat-group-user__btn--add",function(){
+  $(this).parent().remove()
+  var name = $(this).attr('data-user-name');
+  var id = $(this).attr('data-user-id');
+    addUser(id, name);  
+  });
+// 追加リストから削除する
+  $('.chat-group-form__field--right').on('click','.js-remove-btn',function(){
+  $(this).parent().remove()
   });
 });
