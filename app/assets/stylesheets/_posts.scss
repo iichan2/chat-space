@@ -74,7 +74,6 @@
       padding: 0 40px;
       background-color: white;
       border-bottom: solid #eee 1px; 
-      position: fixed; 
       display: flex;
       justify-content: space-between;
       .group-status{
@@ -110,10 +109,9 @@
       }
     }   
     .messages{
-      min-height: calc(100vh - 100px);
-      width: 100%;
-      margin-top: 100px;
-      padding: 46px 40px 100px;
+      height: calc(100vh - 100px - 90px);
+      width: calc(100vw - 300px);
+      padding: 46px 40px 0;
       background-color: #fafafa;
       overflow: scroll;
 
