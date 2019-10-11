@@ -37,7 +37,6 @@ $(document).on('turbolinks:load', function(){
       $('.messages').append(html);
       $('#new_message')[0].reset();
       $('.submit-btn').prop('disabled', false);
-      console.log($('.messages')[0])
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
@@ -45,13 +44,14 @@ $(document).on('turbolinks:load', function(){
       $('.form__submit').prop('disabled', false);
     })  
   })
-
+  
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $(".message:last").data("message-id")
+    
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-      url: 'api/messages',
+      url: 'api/messages', 
       //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',
@@ -59,7 +59,6 @@ $(document).on('turbolinks:load', function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages)
       //追加するHTMLの入れ物を作る
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
@@ -72,8 +71,15 @@ $(document).on('turbolinks:load', function(){
       });
     })
     .fail(function() {
-      console.log('error');
-    });
+      alert('エラー');
+      $('.form__submit').prop('disabled', false); 
+  });
   };
-  setInterval(reloadMessages, 5000);
-});
+ 
+$(window).on('load',function(){
+    var str = location.href
+  if (str.match(/\/groups\/\d+\/messages/)){
+     setInterval(reloadMessages, 5000);
+  }
+  });
+}); 
