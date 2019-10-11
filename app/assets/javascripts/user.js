@@ -17,14 +17,19 @@ $(document).on('turbolinks:load', function(){
   }
   $('#user-search-field').on('keyup',function(e){
    e.preventDefault();
-   var input = $('#user-search-field').val();
+   var input = $('#user-search-field').val(); 
 
+   if(input.length == 0){
+    $("#user-search-result").empty();
+     return;
+   }
    $.ajax({
     type: 'GET',
     url: '/users',
     data: { keyword: input },
     dataType: 'json'
    })
+   
    .done(function(users) {
      $("#user-search-result").empty();
      if (users.length !== 0) {
