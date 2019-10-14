@@ -48,7 +48,8 @@ $(document).on('turbolinks:load', function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $(".message:last").data("message-id")
-    
+    var str = location.href
+  if (str.match(/\/groups\/\d+\/messages/)){
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: 'api/messages', 
@@ -69,17 +70,12 @@ $(document).on('turbolinks:load', function(){
       $('.messages').append(insertHTML);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       });
-    })
+     })
     .fail(function() {
       alert('エラー');
       $('.form__submit').prop('disabled', false); 
-  });
+     });
+    };
   };
- 
-$(window).on('load',function(){
-    var str = location.href
-  if (str.match(/\/groups\/\d+\/messages/)){
-     setInterval(reloadMessages, 5000);
-  }
-  });
+  setInterval(reloadMessages, 5000);
 }); 

@@ -46,6 +46,8 @@ $(document).on('turbolinks:load', function(){
   })
   });
 // リストからユーザーを追加する
+
+
 var add_list = $(".chat-group-users");
 
 function addUser(id, name) {

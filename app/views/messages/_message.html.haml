@@ -3,7 +3,7 @@
     .talker
       = message.user.name
     .date
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.created_at.strftime("%Y/%m/%d(%a) %H:%M")
   .text
     - if message.content.present?
       %p.content
