@@ -114,6 +114,7 @@
       overflow: scroll;
 
       .message{
+        min-height: 105px;
         padding: 0 0 40px;
         .message-status{
           display: flex;
@@ -136,7 +137,7 @@
     }
     .form{
       width: calc(100% - 300px);
-      height: 100px;
+      height: 90px;
       background-color: gainsboro;
       padding:20px 40px;
       position: fixed;
@@ -173,7 +174,7 @@
             margin-top: 15px;
             &__icon{
               .fa-large{
-                font-size: 20px;
+                font-size: 24px;
                 cursor: pointer;
               }
             }
