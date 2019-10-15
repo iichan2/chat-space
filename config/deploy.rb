@@ -12,7 +12,7 @@ set :rbenv_ruby, '2.5.1' #このアプリで使用しているrubyのバージ�
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/chatspace.pem']  ※例：~/.ssh/key_pem.pem
+                  keys: ['~/.ssh/chatspace.pem'] 
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
