@@ -10,9 +10,9 @@ $(document).on('turbolinks:load', function(){
     search_list.append(html);
   }                
    function appendErrMsgToHTML(msg) {
-      var html = `<li>
+      var html = `<div class="chat-group-user clearfix">
                     <div class='listview__element--right-icon'>${ msg }</div>
-                 </li>`
+                 </div>`
     search_list.append(html);
   }
   $('#user-search-field').on('keyup',function(e){
@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function(){
         appendUser(user);
       });
     }
-    else {
+     else {
       appendErrMsgToHTML("一致するユーザーはいません");
      }
    })
