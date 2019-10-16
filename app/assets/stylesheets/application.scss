@@ -8,4 +8,7 @@
 @import "modules/group";
 @import "mixin/user";
 @import "posts";
-
+a{
+text-decoration: none;
+color: $light_bule;
+}
